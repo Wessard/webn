@@ -701,13 +701,44 @@ table {
 }
 .vid_card {
   width: 432px;
+  height: 200px;
   background-color: #F4F6FB;
   border-radius: 40px;
 }
-.vid .vid_card div:not(:last-child) {
-  margin-bottom: 20px;
+.vid .vid_card div:not(:first-child) {
+  display: block;
+  margin-top: 20px;
 }
 .vid .vid_wrap {
   display: flex;
-  flex-direction: column;
+}
+.vid .vid_card_inp {
+  margin-left: 40px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.vid .inp_sel {
+  width: 531px;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  border: 1px solid #F4F6FB;
+}
+.vid .inp_opt {
+  font-family: var(--op600);
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--black);
+}
+.vid .vid_card_btn {
+  padding: 17px 26px;
+  background-color: var(--blue);
+  font-family: var(--op700);
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--white);
+  height: 56px;
+  border-radius: var(--borradius);
 }/*# sourceMappingURL=style.css.map */
