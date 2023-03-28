@@ -2,12 +2,6 @@ new Swiper('.projects_sw', {
   spaceBetween: 24,
   slidesPerView: 'auto',
   slideToClickedSlide: false,
-  // If we need pagination
-  // pagination: {
-  //   el: '.projects_sw .swiper-pagination',
-  //   clickable:true
-  // },
-  // Navigation arrows
   navigation: {
     nextEl: '.projects_sw .swiper-button-next',
     prevEl: '.projects_sw .swiper-button-prev',
@@ -138,3 +132,45 @@ function generateTabs(tabClass, tabBtnClass, tabPaneClass) {
 generateTabs('.tabs', '.tabs__btn-js-1', '.tabs__pane-js-1');
 generateTabs('.gabs', '.tabs__btn-js-2', '.tabs__pane-js-2');
 generateTabs('.rabs', '.tabs__btn-js-3', '.tabs__pane-js-3');
+
+generateTabs('.mabs', '.tabs__btn-js-4', '.tabs__pane-js-4');
+generateTabs('.labs', '.tabs__btn-js-5', '.tabs__pane-js-5');
+
+
+
+console.log('tabs__btn-js-3', document.querySelectorAll('.tabs__btn-js-3'));
+console.log('tabs__btn-js-4', document.querySelectorAll('.tabs__btn-js-4'));
+
+//Вызов модалки
+function showZapis(el) {
+      //Открываем модалку
+      $('body').addClass('showZapis');
+}
+$(document).ready(function(){
+  $('.header_burger').click(function(event){
+    $('.header_burger, .header_bx_list').toggleClass('active')
+  })
+})
+
+window.onscroll=function(){myFunction()};
+var header=document.getElementById('myHeader');
+var bx_list_item=document.querySelectorAll('.bx_list_item>a , .header_phone_link, .header_wh_logo');
+var sticky=header.offsetTop;
+function myFunction(){
+  let bx_logo=document.querySelector('.header_bx_logo');
+    if(window.pageYOffset>sticky){
+      bx_list_item.forEach((el)=> {
+        bx_logo.classList.add('active')
+            el.classList.add('active');
+        })
+        header.classList.add("sticky");
+    }else {
+      bx_list_item.forEach((el)=> {
+        el.classList.remove('active');
+        bx_logo.classList.remove('active')
+      })
+        header.classList.remove("sticky");
+    }
+}
+
+let dn=document.querySelector('.dn');
